@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 """
 """
 __author__ = 'Alisue <lambdalisue@hashnote.net>'
+import django
 from django.test import TestCase
 from django.contrib import admin
 from django.core.urlresolvers import reverse
@@ -66,7 +67,10 @@ class RegistrationAdminTestCase(TestCase):
         url = urlresolvers.reverse('admin:registration_registrationprofile_change', args=(100,))
         response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 404)
+        if django.VERSION >= (1, 11):
+            self.assertEqual(response.status_code, 302)
+        else:
+            self.assertEqual(response.status_code, 404)
 
     def test_change_view_post_valid_accept_from_untreated(self):
         new_user = self.backend.register(
