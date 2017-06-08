@@ -24,9 +24,9 @@ django-inspectional-registration
 Author
     Alisue <lambdalisue@hashnote.net>
 Supported python versions
-    2.6, 2.7, 3.2, 3.3, 3.4, 3.5
+    2.6, 2.7, 3.3, 3.4, 3.5
 Supported django versions
-    1.5 - 1.10
+    1.5 - 1.11
 
 django-inspectional-registration is a enhanced application of
 django-registration_. The following features are available
@@ -43,7 +43,7 @@ django-registration_. The following features are available
 
 -   Any Django models are available to use as supplemental information of
     registration if the models are subclasses of
-    ``registration.supplements.RegistrationSupplementBase``. 
+    ``registration.supplements.RegistrationSupplementBase``.
     It is commonly used for inspection.
 
 -   You can send any additional messages to the user in each steps
